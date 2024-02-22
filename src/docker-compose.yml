@@ -20,11 +20,11 @@ services:
       context: .
       dockerfile: services/basket/Basket.API/Dockerfile
 
-  discount.api:
-    image: ${DOCKER_REGISTRY-}discountapi
+  discount.grpc:
+    image: ${DOCKER_REGISTRY-}discountgrpc
     build:
       context: .
-      dockerfile: discount/Discount.API/Dockerfile
+      dockerfile: services/discount/Discount.GRPC/Dockerfile
 
 volumes:
   mongo_data:
@@ -33,5 +33,6 @@ volumes:
   portainer_data:
     external: true
   
+
 
 
